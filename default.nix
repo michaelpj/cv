@@ -1,4 +1,4 @@
-{ stdenv, texlive }:
+{ stdenv, texlive, biber }:
 
 let
   tex = texlive.combine { 
@@ -7,11 +7,11 @@ let
     moderncv 
     fontawesome
     collection-bibtexextra
-    bibtex biblatex logreq xstring biber
+    bibtex biblatex logreq xstring 
     latexmk;
   };
 in
 stdenv.mkDerivation {
   name = "cv";
-  buildInputs = [ tex ];
+  buildInputs = [ tex biber ];
 }

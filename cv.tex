@@ -1,28 +1,9 @@
 \documentclass[12pt,a4paper,sans]{moderncv}
 
 % bibtex hackery from the internet
-\usepackage[style=authoryear,sorting=ydnt,dashed=false]{biblatex}
+\usepackage[style=authoryear,sorting=ydnt]{biblatex}
 
-\renewbibmacro*{date}{}
-\renewbibmacro*{date+extrayear}{}
-\renewbibmacro*{issue+date}{}
-\newcommand*{\bibyear}{}
-
-\defbibenvironment{bibliography}
-  {\list
-     {\iffieldequals{year}{\bibyear}
-        {}
-        {\printfield{year}%
-         \savefield{year}{\bibyear}}}
-     {\setlength{\topsep}{0pt}% layout parameters based on moderncvstyleclassic.sty
-      \setlength{\labelwidth}{\hintscolumnwidth}%
-      \setlength{\labelsep}{\separatorcolumnwidth}%
-      \setlength{\itemsep}{\bibitemsep}%
-      \leftmargin\labelwidth%
-      \advance\leftmargin\labelsep}%
-      \sloppy\clubpenalty4000\widowpenalty4000}
-  {\endlist}
-  {\item}
+\bibliography{cv}
 
 % CV content
 
@@ -34,7 +15,6 @@
 \moderncvcolor{black}     
 
 \begin{document}
-
 
 \maketitle
 
@@ -142,12 +122,12 @@
 \cvitem{Intermediate}{Python, Haskell}
 \cvitem{Conversant}{Javascript, C/C++, R, Idris}
 
+\nocite{*}
+\printbibliography[title={Publications}]
+
 \section{Education}
 \cventry{2008-2012}{Mathematics and Philosophy}{Oxford University}{Oxford}{}{MMathPhil - First Class}
 \cventry{2011}{Jodrell Scholarship}{}{}{}{For performance in Final Examinations}
-
-\printbibliography[title={Publications}]
-
 
 \section{Interests}
 I sing with Commotio in Oxford, as well as occasionally returning to the Queen's College Chapel Choir. I like reading and playing squash, when I get the opportunity.
