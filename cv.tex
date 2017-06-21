@@ -1,18 +1,18 @@
 \documentclass[12pt,a4paper,sans]{moderncv}
-
-% bibtex hackery from the internet
-\usepackage[style=authoryear,sorting=ydnt]{biblatex}
-
-\bibliography{cv}
-
-% CV content
-
-\firstname{Michael}
-\familyname{\linebreak{}Peyton Jones}
-\address{9 Warwick Street}{Oxford, OX4 1SZ}
-\email{michaelpj@gmail.com}
 \moderncvstyle{banking}
 \moderncvcolor{black}     
+
+\usepackage[style=authoryear,sorting=ydnt]{biblatex}
+\bibliography{cv}
+
+\firstname{Michael}
+\familyname{Peyton Jones}
+\address{9 Warwick Street}{Oxford, OX4 1SZ}
+\email{michaelpj@gmail.com}
+\homepage{www.michaelpj.com}
+\social[twitter]{mpeytonjones}
+\social[linkedin]{michael-pj}
+\social[github]{michaelpj}
 
 \begin{document}
 
@@ -32,7 +32,7 @@
     \item Advised companies, institutions, and individual entrepreneurs on impact strategy.
     \item Developed qualitative and quantitative modelling techniques for
       assessing the potential impact of startups.
-    \item 
+    \item Interviewed experts and conducted desk research to break down problem areas.
   \end{itemize}
 }
 
@@ -63,7 +63,7 @@
   \item Research and intellectual property
     \begin{itemize}
     \item Co-authored an academic paper.
-    \item Inventor on three (?) patents.
+    \item Inventor on two (forthcoming) patents.
     \end{itemize}
   \item Software usability
     \begin{itemize}
@@ -114,6 +114,13 @@
 {}
 {}
 
+\nocite{*}
+\printbibliography[title={Publications}]
+
+\section{Education}
+\cventry{2008-2012}{Mathematics and Philosophy}{Oxford University}{Oxford}{}{MMathPhil - First Class}
+\cventry{2011}{Jodrell Scholarship}{}{}{}{For performance in Final Examinations}
+
 \section{Skills}
 
 \subsection{Programming languages}
@@ -122,14 +129,8 @@
 \cvitem{Intermediate}{Python, Haskell}
 \cvitem{Conversant}{Javascript, C/C++, R, Idris}
 
-\nocite{*}
-\printbibliography[title={Publications}]
-
-\section{Education}
-\cventry{2008-2012}{Mathematics and Philosophy}{Oxford University}{Oxford}{}{MMathPhil - First Class}
-\cventry{2011}{Jodrell Scholarship}{}{}{}{For performance in Final Examinations}
-
 \section{Interests}
-I sing with Commotio in Oxford, as well as occasionally returning to the Queen's College Chapel Choir. I like reading and playing squash, when I get the opportunity.
+I sing with Commotio in Oxford, as well as occasionally returning to the Queen's
+College Chapel Choir. I like reading and playing squash, when I get the opportunity.
 
 \end{document}
