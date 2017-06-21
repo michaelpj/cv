@@ -4,8 +4,10 @@ let
   tex = texlive.combine { 
     inherit (texlive) 
     scheme-small 
-    #collection-fontsrecommended
-    moderncv etoolbox xcolor metafont
+    moderncv 
+    fontawesome
+    collection-bibtexextra
+    bibtex biblatex logreq xstring biber
     latexmk;
   };
 in

@@ -1,28 +1,153 @@
 \documentclass[12pt,a4paper,sans]{moderncv}
 
+% bibtex hackery from the internet
+\usepackage[style=authoryear,sorting=ydnt,dashed=false]{biblatex}
+
+\renewbibmacro*{date}{}
+\renewbibmacro*{date+extrayear}{}
+\renewbibmacro*{issue+date}{}
+\newcommand*{\bibyear}{}
+
+\defbibenvironment{bibliography}
+  {\list
+     {\iffieldequals{year}{\bibyear}
+        {}
+        {\printfield{year}%
+         \savefield{year}{\bibyear}}}
+     {\setlength{\topsep}{0pt}% layout parameters based on moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+
+% CV content
 
 \firstname{Michael}
 \familyname{\linebreak{}Peyton Jones}
-\address{71 Humberstone Road}{Cambridge, CB4 1JD}
+\address{9 Warwick Street}{Oxford, OX4 1SZ}
 \email{michaelpj@gmail.com}
-\moderncvstyle{classic}
+\moderncvstyle{banking}
 \moderncvcolor{black}     
 
-
 \begin{document}
+
+
 \maketitle
+
+\section{Experience}
+\cventry
+{June 2016-Present}
+{Co-founder}
+{Good Technology Project}
+{Oxford}
+{}
+{
+  This is a research project and consultancy focussed on social impact in technology and
+  entrepreneurship. I have:
+  \begin{itemize}
+    \item Advised companies, institutions, and individual entrepreneurs on impact strategy.
+    \item Developed qualitative and quantitative modelling techniques for
+      assessing the potential impact of startups.
+    \item 
+  \end{itemize}
+}
+
+\cventry
+{April 2013-Present}
+{Research Engineer/Lead Software Developer}
+{Semmle}
+{Oxford}
+{}
+{
+  I did a wide variety of work at Semmle, including:
+  \begin{itemize}
+  \item Compiler and optimizer engineering
+    \begin{itemize}
+    \item Novel technical improvements to incremental evaluation of Datalog.
+    \item Multi-stage caching of compilation results to improve compilation speed.
+    \end{itemize}
+  \item Programming language design
+    \begin{itemize}
+    \item Developed process for the design and acceptance of QL language improvements.
+    \item Designed and developed numerous improvements to QL, including a module
+      system and a novel aggregate semantics.
+    \end{itemize}
+  \item Leadership and management
+    \begin{itemize}
+    \item Team lead for the QL language and compiler team.
+    \end{itemize}
+  \item Research and intellectual property
+    \begin{itemize}
+    \item Co-authored an academic paper.
+    \item Inventor on three (?) patents.
+    \end{itemize}
+  \item Software usability
+    \begin{itemize}
+    \item Redesigned our software deployment to make installation and
+      upgrades less painful.
+    \item Systematically rewrote our logging output systems to be consistent and reliable.
+    \end{itemize}
+  \item Customer success and sales engineering
+    \begin{itemize}
+    \item Provided technical support during and after the sales process, including
+      installation, custom development, and presentation of findings.
+    \end{itemize}
+  \end{itemize}
+}
+
+\cventry
+{Winter 2012}
+{Intern}
+{Atlassian}
+{Sydney}
+{}
+{}
+
+\cventry
+{Summer 2012}
+{Intern}
+{Giving What We Can}
+{Oxford}
+{}
+{
+  I did research into and modelling of the cost-effectiveness of meta-charities.
+  I also helped draft the initial staff contracts and articles of incorporation for the charity.
+}
+
+\cventry
+{Summer 2011}
+{Intern}
+{Metaswitch Networks}
+{London}
+{}
+{}
+
+\cventry
+{Summer 2010}
+{Intern}
+{LogicBlox}
+{Atlanta}
+{}
+{}
+
+\section{Skills}
+
+\subsection{Programming languages}
+
+\cvitem{Fluent}{Java, Scala}
+\cvitem{Intermediate}{Python, Haskell}
+\cvitem{Conversant}{Javascript, C/C++, R, Idris}
+
 \section{Education}
 \cventry{2008-2012}{Mathematics and Philosophy}{Oxford University}{Oxford}{}{MMathPhil - First Class}
 \cventry{2011}{Jodrell Scholarship}{}{}{}{For performance in Final Examinations}
 
-\section{Experience}
-\cventry{April 2013-Present}{Research Engineer}{Semmle}{Oxford}{}{I work on improvements to the optimizing Datalog compiler; the query language; and Scala analysis support. \newline{} Languages used: Java, Scala, Python.}
+\printbibliography[title={Publications}]
 
-\cventry{October 2012-April 2013}{Intern}{Atlassian}{Sydney}{}{I worked in the Performance team working on analytics and data visualization. \newline{} Languages used: Scala, Javascript.}
-
-\cventry{Summer 2011}{Intern}{Metaswitch Networks}{London}{}{I implemented a component to perform pings over label-switched paths as a part of their control-plane software for routers. \newline{} Languages used: C.}
-
-\cventry{Summer 2010}{Intern}{LogicBlox}{Atlanta}{}{I developed an addition to their Datalog compiler to handle a wider class of evaluable programs. \newline{} Languages used: Java.}
 
 \section{Interests}
 I sing with Commotio in Oxford, as well as occasionally returning to the Queen's College Chapel Choir. I like reading and playing squash, when I get the opportunity.
