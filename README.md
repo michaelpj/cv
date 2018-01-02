@@ -1,1 +1,4 @@
-Built using Nix.
+```
+nix-build
+evince result/cv.pdf
+```

@@ -1,4 +1,4 @@
-{ stdenv, texlive, biber }:
+{ pkgs ? (import <nixpkgs> {}), stdenv ? pkgs.stdenv, texlive ? pkgs.texlive, biber ? pkgs.biber }:
 
 let
   tex = texlive.combine { 
