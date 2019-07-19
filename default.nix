@@ -14,7 +14,7 @@ in
 stdenv.mkDerivation {
   name = "cv";
   buildInputs = [ tex biber ];
-  src = ./.;
+  src = pkgs.lib.sourceFilesBySuffices ./. [ ".tex" ".bib" ".cls" ".bst" ];
   buildPhase = "latexmk -view=pdf cv.tex";
   installPhase = "mkdir -p $out && mv cv.pdf $out/";
 }
