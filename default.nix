@@ -7,6 +7,7 @@ let
     moderncv 
     fontawesome
     collection-bibtexextra
+    collection-latexextra
     bibtex biblatex logreq xstring 
     latexmk;
   };
