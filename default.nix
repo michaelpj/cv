@@ -5,7 +5,8 @@ let
     inherit (texlive) 
     scheme-small 
     moderncv 
-    fontawesome
+    fontawesome5
+    academicons
     collection-bibtexextra
     collection-latexextra
     bibtex biblatex logreq xstring 
