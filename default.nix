@@ -1,16 +1,16 @@
-{ pkgs ? (import <nixpkgs> {}), stdenv ? pkgs.stdenv, texlive ? pkgs.texlive, biber ? pkgs.biber }:
+{ pkgs ? (import <nixpkgs> { }), stdenv ? pkgs.stdenv, texlive ? pkgs.texlive, biber ? pkgs.biber }:
 
 let
-  tex = texlive.combine { 
-    inherit (texlive) 
-    scheme-small 
-    moderncv 
-    fontawesome5
-    academicons
-    collection-bibtexextra
-    collection-latexextra
-    bibtex biblatex logreq xstring 
-    latexmk;
+  tex = texlive.combine {
+    inherit (texlive)
+      scheme-small
+      moderncv
+      fontawesome5
+      academicons
+      collection-bibtexextra
+      collection-latexextra
+      bibtex biblatex logreq xstring
+      latexmk;
   };
 in
 stdenv.mkDerivation {
